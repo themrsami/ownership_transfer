@@ -1,0 +1,37 @@
+; Author: themrsami
+; GitHub: https://github.com/themrsami
+; Date: 14-01-2024
+
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\*\shell\runas]
+@="Take Ownership"
+"NoWorkingDirectory"=""
+
+[HKEY_CLASSES_ROOT\*\shell\runas\command]
+@="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+"IsolatedCommand"="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+
+[HKEY_CLASSES_ROOT\Directory\shell\runas]
+@="Take Ownership"
+"NoWorkingDirectory"=""
+
+[HKEY_CLASSES_ROOT\Directory\shell\runas\command]
+@="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+"IsolatedCommand"="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+
+[HKEY_CLASSES_ROOT\batfile\shell\runas]
+@="Take Ownership"
+"NoWorkingDirectory"=""
+
+[HKEY_CLASSES_ROOT\batfile\shell\runas\command]
+@="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+"IsolatedCommand"="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.sys\shell\runas]
+@="Take Ownership"
+"NoWorkingDirectory"=""
+
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.sys\shell\runas\command]
+@="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+"IsolatedCommand"="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
